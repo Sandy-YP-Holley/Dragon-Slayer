@@ -1,41 +1,117 @@
-body {
-  background-color: darkblue;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#text {
-  background-color: black;
-  color: white;
-  padding: 10px;
+body {
+  background: #10131a;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
 }
 
 #game {
-  max-width: 500px;
-  max-height: 400px;
-  background-color: lightgray;
-  color: white;
-  margin: 0 auto;
-  padding: 10px;
-}
-
-#controls {
-  border: 1px black solid;
-  padding: 5px;
+  width: 100%;
+  max-width: 700px;
+  background: #1d2430;
+  border: 2px solid #3d4b63;
+  border-radius: 14px;
+  box-shadow: 0 12px 35px rgba(0,0,0,.45);
+  overflow: hidden;
 }
 
 #stats {
-  border: 1px black solid;
-  color: black;
-  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px;
+  background: #2b3444;
+  border-bottom: 2px solid #3d4b63;
+}
+
+.stat {
+  font-weight: 600;
+}
+
+.stat strong {
+  color: #ffd54f;
+}
+
+#controls {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 18px;
+}
+
+button {
+  background: #3d6df2;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+button:hover {
+  background: #5884ff;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: scale(.97);
 }
 
 #monsterStats {
   display: none;
-  border: 1px black solid;
-  color: white;
-  padding: 5px;
-  background-color: red;
+  background: #8b1d1d;
+  padding: 16px;
+  border-top: 2px solid #a52a2a;
+  border-bottom: 2px solid #a52a2a;
 }
 
-.stat {
-  padding-right: 10px;
+#monsterStats .stat strong {
+  color: #ffe082;
+}
+
+#text {
+  min-height: 170px;
+  padding: 22px;
+  background: #161b24;
+  line-height: 1.7;
+  font-size: 17px;
+  color: #ececec;
+}
+
+@media (max-width: 600px) {
+  #controls {
+    grid-template-columns: 1fr;
+  }
+
+  #stats {
+    flex-direction: column;
+  }
+
+  #text {
+    font-size: 16px;
+  }
+}
+
+#title {
+  text-align: center;
+  padding: 20px;
+  font-size: 2rem;
+  background: #273142;
+  color: gold;
+  letter-spacing: 2px;
+  border-bottom: 2px solid #3d4b63;
 }
